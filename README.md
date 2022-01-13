@@ -1,2 +1,2 @@
 # CIT.005
-object
+object-oriented programming 
