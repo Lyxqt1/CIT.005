@@ -12,7 +12,7 @@ public class Main {
         for(int i=0; i<n; i++) {
             numArray[i]=sc.nextInt();
         }
-
+        
         System.out.println("which way should the numbers inputted be ordered?\na.)Ascending order \nb.)Descending order");
         char letterInput = scanner.next().charAt(0);
         Arrays.sort(numArray);
