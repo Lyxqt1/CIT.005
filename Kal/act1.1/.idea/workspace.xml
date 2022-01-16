@@ -5,22 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2317a326-7e93-4556-b8f1-a4078d8d3477" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../notes/.obsidian/app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../notes/.obsidian/appearance.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../notes/.obsidian/core-plugins.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../notes/.obsidian/graph.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../notes/.obsidian/hotkeys.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../notes/.obsidian/themes/Atom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../notes/.obsidian/workspace" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/act1.1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/act1.1/com/kal/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kal/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../act1.3/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../act1.3/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../act1.3/src/com/kal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../act1.3/src/com/kal/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled104.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notes/.obsidian/workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../notes/.obsidian/workspace" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +91,7 @@
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.kal.Main" />
-      <module name="untitled104" />
+      <module name="act1.2" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
