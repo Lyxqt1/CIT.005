@@ -129,4 +129,3 @@ public class Main {
         switchRates();
     }
 }
-//testing commit
