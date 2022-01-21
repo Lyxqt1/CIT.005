@@ -11,9 +11,9 @@ public class TestCircle{
         System.out.println("This program generates a random Circle");
         // Initialize the Circles as arbitrary sizes and at arbitrary positions:
         for(int i = 0 ; i < circs.length ; ++i) {
-           x[i]= (int) (Math.random()*100);
-           y[i]= (int) (Math.random()*100);
-           r[i]= (float) (Math.random()*100);
+            x[i]= (int) (Math.random()*100);
+            y[i]= (int) (Math.random()*100);
+            r[i]= (float) (Math.random()*100);
             circs[i] = new Circle(x[i],y[i],r[i]);
             System.out.println("\nCircle "+(i+1)+"\n"+circs[i]);
         }

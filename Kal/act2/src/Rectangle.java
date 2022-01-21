@@ -12,6 +12,7 @@ public class Rectangle {
         lowerRight = new Point(Math.max(x1,x2), Math.max(y1,y2));
     }
 
+
     // Methods to create a rectangle enclosing the current rectangle and the argument
     public Rectangle encloses(Rectangle rect) {
         // Return a new rectangle defined by the minimum x,y for to left and the and maximum x,y for bottom right
@@ -25,13 +26,13 @@ public class Rectangle {
         return "Coordinates: ("+upperLeft +"), ("+lowerRight+")";
     }
     public double length() {
-        return abs((upperLeft.getX() - lowerRight.getX()));
+        return (Math.round(abs((upperLeft.getX() - lowerRight.getX()))*100.0))/100.0;
     }
     public double width(){
-        return abs((upperLeft.getY()- lowerRight.getY()));
+        return (Math.round(abs((upperLeft.getY()- lowerRight.getY()))*100.0))/100.0;
     }
     public double area(){
-        return length()*width();
+        return (Math.round(length()*width()*100.0))/100.0;
     }
     double perimeter(){
         return (2*length())+(2*width());

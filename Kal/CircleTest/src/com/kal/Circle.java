@@ -16,8 +16,8 @@ public class Circle {
     // Methods to create a rectangle enclosing the current rectangle and the argument
     public Circle encloses(Circle circ) {
         // Return a new rectangle defined by the minimum x,y for to left and the and maximum x,y for bottom right
-        return new Circle((int) Math.min(center.getX(), circ.center.getX()),
-                (int) Math.min(center.getY(), circ.center.getY()), (float) circ.radius);
+        return new Circle((int) Math.min(center.getX(),(int) circ.center.getX()),
+                (int) Math.min(center.getY(), (int)circ.center.getY()), (float) circ.radius);
 
     }
     public float area(){

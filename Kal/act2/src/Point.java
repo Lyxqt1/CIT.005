@@ -1,8 +1,8 @@
 public class Point {
     // Create a Point object from a coordinate pair
     public Point(double x, double y) {
-        this.x = x;
-        this.y = y;
+        this.x = (Math.round(x*100.0))/100.0;
+        this.y = (Math.round(y*100.0))/100.0;
     }
 
     // Create a Point object from another Point
@@ -13,16 +13,16 @@ public class Point {
 
     // Get the value of the x coordinate
     double getX() {
-        return x;
+        return (Math.round(x*100.0))/100.0;
     }
 
     // Get the value of the y coordinate
     double getY() {
-        return y;
+        return (Math.round(y*100.0))/100.0;
     }
 
     public String toString(){
-        return x +","+y;
+        return x +", "+y;
     }
 
     // Fields store the point coordinates

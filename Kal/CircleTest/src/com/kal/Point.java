@@ -2,7 +2,7 @@ package com.kal;
 
 public class Point {
     // Create a Point object from a coordinate pair
-    public Point(double x, double y) {
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -14,13 +14,13 @@ public class Point {
     }
 
     // Get the value of the x coordinate
-    double getX() {
-        return x;
+    int getX() {
+        return (int) x;
     }
 
     // Get the value of the y coordinate
-    double getY() {
-        return y;
+    int getY() {
+        return (int) y;
     }
 
     public String toString(){
@@ -28,6 +28,6 @@ public class Point {
     }
 
     // Fields store the point coordinates
-    private double x;
-    private double y;
+    private int x;
+    private int y;
 }
