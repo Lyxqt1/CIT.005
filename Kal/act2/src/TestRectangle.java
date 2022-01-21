@@ -4,11 +4,6 @@ public class TestRectangle {
     public static void main(String args[]) {
         Rectangle[] rects = new Rectangle[1];
         Rectangle enclosing;
-        int x1 = 1;
-        int x2 = 4;
-        int y1 = 1;
-        int y2 = 3;
-        int rectWidth;
         // Initialize the rectangles as arbitrary sizes and at arbitrary positions:
         for(int i = 0 ; i < rects.length ; ++i) {
             rects[i] = new Rectangle(Math.random()*100, Math.random()*100, Math.random()*100, Math.random()*100);
