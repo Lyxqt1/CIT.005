@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "minecraft piglin.md",
-            "mode": "preview"
+            "file": "activity 2.md",
+            "mode": "source"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "minecraft piglin.md",
+                "file": "activity 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -85,7 +85,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "minecraft piglin.md",
+                "file": "activity 2.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -108,7 +108,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "minecraft piglin.md"
+                "file": "activity 2.md"
               }
             }
           }
@@ -121,15 +121,15 @@
   },
   "active": "773448038b656ce8",
   "lastOpenFiles": [
-    "minecraft piglin.md",
+    "activity 2.md",
     "CIT.005/activity 1.md",
+    "minecraft piglin.md",
     "CIT.005/CIT.005.md",
     "minecraft.md",
     "Home Page - Uling Roasters.md",
     "About Page.md",
     "I'm Hungry.md",
     "Known Endorsers.md",
-    "Local Branches.md",
-    "Navigation Bar.md"
+    "Local Branches.md"
   ]
 }
