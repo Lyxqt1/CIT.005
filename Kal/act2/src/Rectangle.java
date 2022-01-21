@@ -12,15 +12,6 @@ public class Rectangle {
         lowerRight = new Point(Math.max(x1,x2), Math.max(y1,y2));
     }
 
-    public Rectangle(Point tl, Point br) {
-        this(tl.getX(), tl.getY(), br.getX(), br.getY());
-    }
-
-    public Rectangle(Rectangle rect) {
-        upperLeft = new Point(rect.upperLeft);
-        lowerRight = new Point(rect.lowerRight);
-    }
-
     // Methods to create a rectangle enclosing the current rectangle and the argument
     public Rectangle encloses(Rectangle rect) {
         // Return a new rectangle defined by the minimum x,y for to left and the and maximum x,y for bottom right
