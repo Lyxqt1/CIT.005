@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="249c6d39-548f-4adf-8e18-1204af66b8ab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../cylinder/src/com/kal/Cylinder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cylinder/src/com/kal/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CircleTest/com/kal/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CircleTest/com/kal/Circle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CircleTest/com/kal/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CircleTest/com/kal/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kal/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kal/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kal/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kal/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kal/TestCircle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kal/TestCircle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../act2/out/production/act2/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/../act2/out/production/act2/Point.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../act2/out/production/act2/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/../act2/out/production/act2/Rectangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../act2/src/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/../act2/src/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../act2/out/production/act2/TestRectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/../act2/out/production/act2/TestRectangle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../act2/src/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../act2/src/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../act2/src/TestRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../act2/src/TestRectangle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
