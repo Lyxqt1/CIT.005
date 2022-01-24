@@ -24,7 +24,7 @@ public class Point {
     }
 
     public String toString(){
-        return x +", "+y;
+        return "("+x +", "+y+")";
     }
 
     // Fields store the point coordinates

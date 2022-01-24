@@ -1,6 +1,6 @@
 package com.kal;
 public class Circle {
-    private Point center;
+    private static Point center;
     private static float radius;
 
     // Constructors

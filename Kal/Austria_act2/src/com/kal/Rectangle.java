@@ -15,7 +15,7 @@ public class Rectangle {
     }
 
     public String coordinates(){
-        return "Coordinates: ("+upperLeft +"), ("+lowerRight+")";
+        return "Coordinates: "+upperLeft +", "+lowerRight;
     }
     public double length() {
         return (Math.round(abs((upperLeft.getX() - lowerRight.getX()))*100.0))/100.0;

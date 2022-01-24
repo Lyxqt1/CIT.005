@@ -47,7 +47,7 @@ public class Main {
                 for (int i = 0; i < circs.length; ++i) {
                     x[i] = (int) (Math.random() * 100);
                     y[i] = (int) (Math.random() * 100);
-                    r[i] = (float) (Math.random() * 100);
+                    r[i] = (float) ((Math.round((Math.random() * 100)*100.0))/100.0);
                     h[i] = 0;//needed the height value to be equal since the equals is used both for cylinder and circle
                     circs[i] = new Circle(x[i], y[i], r[i]);
                     System.out.println("\nCircle " + (i + 1) + "\n" + circs[i]);
@@ -61,8 +61,8 @@ public class Main {
                 for (int i = 0; i < cylins.length; ++i) {
                     x[i] = (int) (Math.random() * 100);
                     y[i] = (int) (Math.random() * 100);
-                    r[i] = (float) (Math.random() * 100);
-                    h[i] = (float) (Math.random() * 100);
+                    r[i] = (float) ((Math.round((Math.random() * 100)*100.0))/100.0);
+                    h[i] = (float) ((Math.round((Math.random() * 100)*100.0))/100.0);
                     cylins[i] = new Cylinder(x[i], y[i], r[i], h[i]);
                     circs[i] = new Circle(x[i], y[i], r[i]);
                     System.out.println("\nCylinder " + (i + 1) + "\n" + cylins[i]);
