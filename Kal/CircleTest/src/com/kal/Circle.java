@@ -1,7 +1,4 @@
 package com.kal;
-
-import java.awt.*;
-
 public class Circle {
     private Point center;
     private float radius;
