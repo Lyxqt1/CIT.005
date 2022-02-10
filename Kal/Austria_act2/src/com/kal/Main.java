@@ -40,6 +40,11 @@ public class Main {
                 // Initialize the rectangles as arbitrary sizes and at arbitrary positions:
                 rects[0] = new Rectangle(Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100);
                 System.out.println(rects[0]);
+                int i = 0;
+
+                i = i++ + i;
+
+                System.out.println("I = " +i);
             }
             case 2 -> {
                 Circle[] circs = new Circle[2];

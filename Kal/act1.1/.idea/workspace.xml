@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e473a94-c711-4b7e-b96b-f789c3761502" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../exam/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam/exam.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Austria_act2/out/production/Austria_act2/com/kal/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Austria_act2/out/production/Austria_act2/com/kal/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Austria_act2/out/production/Austria_act2/com/kal/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Austria_act2/out/production/Austria_act2/com/kal/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Austria_act2/src/com/kal/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Austria_act2/src/com/kal/Circle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Austria_act2/src/com/kal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Austria_act2/src/com/kal/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CircleTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CircleTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CircleTest/out/production/CircleTest/com/kal/TestCircle.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CircleTest/out/production/CircleTest/com/kal/TestCircle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +24,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="23qlXmcJHcNO2segWUh4dP6CBls" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
