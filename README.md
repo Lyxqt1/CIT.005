@@ -1,2 +1,2 @@
 # CIT.005
-object-oriented programming 
+OOP - object-oriented programming 
