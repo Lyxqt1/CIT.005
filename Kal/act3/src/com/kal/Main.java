@@ -3,18 +3,16 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class Main {
-    static float totalSumPackage;
-    static float initialSum;
-    static Vector<Float> totalCostVec = new Vector<Float>();
+    static Vector<Double> totalCostVec = new Vector<Double>();//storing the sum of all total cost of each packages
     public static void main(String[] args) {
-        float packageCost = 69.42f;
+        double packageCost = 69.42d;
         char exit;
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to FedEx®, DHL® and UPS®\n");
         int packageType;
-        float packageWeight;
-        final float flatFee = 200;
-        final float additionalOvernight = 100;
+        double packageWeight;
+        final double flatFee = 200;
+        final double additionalOvernight = 100;
         int i = 0; //tracks number of packages
         do {
             System.out.println("enter the details below\n----------------SENDER----------------");
@@ -110,12 +108,12 @@ public class Main {
         sc.nextLine();
         return packageType;
     }
-    static float inputPackageWeight(){
-        float packageWeight = 0;
+    static double inputPackageWeight(){
+        double packageWeight = 0;
         Scanner sc = new Scanner(System.in);
         do{
             System.out.println("enter the package weight(ounces)");
-            packageWeight = sc.nextFloat();
+            packageWeight = sc.nextDouble();
             if((packageWeight<=0)){
                 System.out.println("re-enter a valid package weight");
             }
@@ -125,8 +123,8 @@ public class Main {
     }
 
     static void totalPackage(){
-        float sum = (float) totalCostVec.stream()
-                .mapToDouble(Float::valueOf) // or .map(i -> i)
+        double sum = (double) totalCostVec.stream()
+                .mapToDouble(Double::valueOf) // or .map(i -> i)
                 .sum();
         System.out.println("total sum of all packages: "+sum);
     }

@@ -5,18 +5,18 @@ public class Package {
     private int senderZip;
     private String recipientName, recipientAddress, recipientCity, recipientState;
     private int recipientZip;
-    private static float packWeight;
-    private static float packCost;
-    float totalCost;
+    private static double packWeight;
+    private static double packCost;
+    double totalCost;
     public Package(String senderName, String senderAddress, String senderCity, String senderState, int senderZip,
                    String recipientName, String recipientAddress, String recipientCity, String recipientState, int recipientZip,
-                   float packageWeight, float packageCost){
+                   double packageWeight, double packageCost){
         this.senderName = senderName; this.senderAddress = senderAddress; this.senderCity = senderCity; this.senderState = senderState; this.senderZip = senderZip;
         this.recipientName = recipientName; this.recipientAddress = recipientAddress; this.recipientCity = recipientCity; this.recipientState = recipientState; this.recipientZip = recipientZip;
         packWeight = packageWeight; packCost = packageCost;
         totalCost = totalCalcCost();
     }
-    public static float totalCalcCost(){
+    public static double totalCalcCost(){
         return packCost*packWeight;
     }
 
