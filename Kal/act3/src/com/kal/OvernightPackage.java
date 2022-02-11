@@ -1,6 +1,6 @@
 package com.kal;
 
-public class Package {
+public class OvernightPackage extends Package{
     String senderName, senderAddress, senderCity, senderState;
     private int senderZip;
     private String recipientName, recipientAddress, recipientCity, recipientState;
@@ -8,18 +8,16 @@ public class Package {
     private static float packWeight;
     private static float packCost;
     float totalCost;
-    public Package(String senderName, String senderAddress, String senderCity, String senderState, int senderZip,
-                   String recipientName, String recipientAddress, String recipientCity, String recipientState, int recipientZip,
-                   float packageWeight, float packageCost){
+    private static float additionalFee;
+    public OvernightPackage(String senderName, String senderAddress, String senderCity, String senderState, int senderZip, String recipientName, String recipientAddress, String recipientCity, String recipientState, int recipientZip, float packageWeight, float packageCost, float additionalOvernight) {
+        super(senderName, senderAddress, senderCity, senderState, senderZip, recipientName, recipientAddress, recipientCity, recipientState, recipientZip, packageWeight, packageCost);
         this.senderName = senderName; this.senderAddress = senderAddress; this.senderCity = senderCity; this.senderState = senderState; this.senderZip = senderZip;
         this.recipientName = recipientName; this.recipientAddress = recipientAddress; this.recipientCity = recipientCity; this.recipientState = recipientState; this.recipientZip = recipientZip;
-        packWeight = packageWeight; packCost = packageCost;
-        totalCost = totalCalcCost();
+        packCost = packageCost; packWeight = packageWeight; OvernightPackage.additionalFee = additionalOvernight; totalCost = totalCalcCost();
     }
     public static float totalCalcCost(){
-        return packCost*packWeight;
+        return (packCost+additionalFee)*packWeight;
     }
-
     public String toString(){
         System.out.println("----------------SENDER----------------\nName: " + senderName);
         System.out.println("Address: " + senderAddress);
@@ -31,9 +29,7 @@ public class Package {
         System.out.println("City: " + recipientCity);
         System.out.println("State: " + recipientState);
         System.out.println("Zipcode: " + recipientZip);
-        System.out.println("\nShipping type: Standard base ------ Shipping cost: " + totalCost +" PHP");
+        System.out.println("\nShipping type: Overnight Shipping ------ Shipping cost: " + totalCost +" PHP");
         return "--------------------------------------------------------------";
     }
 }
-
-

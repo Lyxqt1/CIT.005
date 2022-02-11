@@ -18,5 +18,14 @@ public class Main {
                 .mapToInt(Integer::valueOf) // or .map(i -> i)
                 .sum();
         System.out.println(sum);
+
+        System.out.println(packs.totalCost);
+        Vector<Float> totalCostVec = new Vector<Float>();
+        totalCostVec.add(packs.totalCost);
+        System.out.println(totalCostVec.get(0));
+        float sum = (float) totalCostVec.stream()
+                .mapToDouble(Float::valueOf) // or .map(i -> i)
+                .sum();
+        System.out.println(sum);
     }
 }
