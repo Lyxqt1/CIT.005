@@ -29,7 +29,7 @@ public class Main {
             double packageWeight = inputPackageWeight();
             int packageType = inputPackageType();//packagetype determines the switch case. end of inputs
             i++;//increment for package count
-            Person sender = new Person(senderName, senderAddress, senderCity, senderState, senderZipcode); //creates Person "sender" and "recipient" then passes those to Package below.
+            Person sender = new Person(senderName, senderAddress, senderCity, senderState, senderZipcode); //creates Person with constructor, "sender" and "recipient" then passes those to Package below.
             Person recipient = new Person(recipientName, recipientAddress, recipientCity, recipientState, recipientZipcode);
             System.out.println("----------------PACKAGE "+i+"----------------");
             switch (packageType){//switch for different packages
@@ -104,7 +104,7 @@ public class Main {
         return zipcode;
     }
     static int inputPackageType(){
-        int packageType = 0;
+        int packageType;
         Scanner sc = new Scanner(System.in);
         do{
             System.out.println("select your shipping option:\n1. standard\n2. two-day delivery\n3. overnight delivery");
@@ -117,7 +117,7 @@ public class Main {
         return packageType;
     }
     static double inputPackageWeight(){
-        double packageWeight = 0;
+        double packageWeight;
         Scanner sc = new Scanner(System.in);
         do{
             System.out.println("enter the package weight(ounces)");
@@ -131,7 +131,7 @@ public class Main {
     }
 
     static void totalPackage(){//method for adding all of the values from the vector of all costs of packages
-        double sum = (double) totalCostVec.stream()
+        double sum = totalCostVec.stream()
                 .mapToDouble(Double::valueOf)
                 .sum();
         System.out.println("total sum of all packages: "+sum + " PHP");

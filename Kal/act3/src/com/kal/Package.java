@@ -8,6 +8,7 @@ public class Package {
     private static double packWeight;
     private static double packCost;
     double totalCost;
+    //constructors
     public Package(String senderName, String senderAddress, String senderCity, String senderState, int senderZip,
                    String recipientName, String recipientAddress, String recipientCity, String recipientState, int recipientZip,
                    double packageWeight, double packageCost){
