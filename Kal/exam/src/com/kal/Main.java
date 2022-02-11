@@ -1,19 +1,22 @@
 package com.kal;
 import java.util.Scanner;
+import java.util.Vector;
+
 public class Main {
 
     public static void main(String[] args) {
-        int inputA;
-        int inputB;
-        int swapC;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("enter two values");
-        inputA = scanner.nextInt();
-        inputB = scanner.nextInt();
-        System.out.println("First value: a = " + inputA +", b: "+inputB);
-        swapC = inputA;
-        inputA = inputB;
-        inputB = swapC;
-        System.out.println("swapped value: a = " + inputA +",  b: "+inputB);
+        Vector<Integer> vec_tor = new Vector<Integer>();
+
+        // Use add() method to add elements in the vector
+        vec_tor.add(12);
+        vec_tor.add(23);
+        vec_tor.add(22);
+        vec_tor.add(10);
+        vec_tor.add(20);
+        System.out.println(vec_tor.size());
+        int sum = vec_tor.stream()
+                .mapToInt(Integer::valueOf) // or .map(i -> i)
+                .sum();
+        System.out.println(sum);
     }
 }

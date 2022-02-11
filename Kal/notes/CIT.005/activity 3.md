@@ -6,8 +6,7 @@ name,
 address, 
 city, 
 state and 
-ZIP 
-code for both the sender and the recipient of the package, 
+ZIP code for both the sender and the recipient of the package, 
 
 in addition to data members that store the 
 weight (in ounces) and 

@@ -7,10 +7,14 @@ public class Person {
     String state;
     int zipcode;
 
-    public Person(String pName, String pAddress, String pCity, String pState, int pZipcode){
-        this.name=pName;
+    public Person(String name, String address, String city, String state, int zipcode){
+        this.name = name;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zipcode = zipcode;
     }
     public String toString(){
-        return name;
+        return name + address + city + state + zipcode;
     }
 }
