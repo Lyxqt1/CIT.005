@@ -91,9 +91,15 @@ public class Main {
         return state;
     }
     static int inputZipcode(){
+        int zipcode;
         Scanner sc = new Scanner(System.in);
-        System.out.print("Zipcode: ");
-        int zipcode = sc.nextInt();
+        do{
+            System.out.println("Zipcode:");
+            zipcode = sc.nextInt();
+            if((zipcode<=0)){
+                System.out.println("re-enter a valid Zipcode - integer");
+            }
+        }while(zipcode<=0);
         sc.nextLine();
         return zipcode;
     }
@@ -124,9 +130,9 @@ public class Main {
         return packageWeight;
     }
 
-    static void totalPackage(){
+    static void totalPackage(){//method for adding all of the values from the vector of all costs of packages
         double sum = (double) totalCostVec.stream()
-                .mapToDouble(Double::valueOf) // or .map(i -> i)
+                .mapToDouble(Double::valueOf)
                 .sum();
         System.out.println("total sum of all packages: "+sum + " PHP");
     }
