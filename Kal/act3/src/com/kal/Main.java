@@ -5,18 +5,16 @@ import java.util.Vector;
 public class Main {
     static Vector<Double> totalCostVec = new Vector<Double>();//storing the sum of all total cost of each packages
     public static void main(String[] args) {
-        double packageCost = 69.42d;
-        char exit;
+        double packageCost = 69.42d;//base cost for packages, defined by the company which is me
+        char exit;//char for exiting the loop
         Scanner sc = new Scanner(System.in);
-        System.out.println("Welcome to FedEx®, DHL® and UPS®\n");
-        int packageType;
-        double packageWeight;
-        final double flatFee = 200;
-        final double additionalOvernight = 100;
+        final double flatFee = 200;//given
+        final double additionalOvernight = 100;//given
         int i = 0; //tracks number of packages
+        System.out.println("Welcome to FedEx®, DHL® and UPS®\n");
         do {
             System.out.println("enter the details below\n----------------SENDER----------------");
-            String senderName = inputName();
+            String senderName = inputName(); //all of these input prints the data needed then asks the user for an input corresponding to that then returns it.
             String senderAddress = inputAddress();
             String senderCity = inputCity();
             String senderState = inputState();
@@ -28,19 +26,20 @@ public class Main {
             String recipientState = inputState();
             int recipientZipcode = inputZipcode();
             System.out.println("----------------Package details----------------");
-            packageWeight = inputPackageWeight();
-            packageType = inputPackageType();
-            i++;
-            Person sender = new Person(senderName, senderAddress, senderCity, senderState, senderZipcode);
+            double packageWeight = inputPackageWeight();
+            int packageType = inputPackageType();//packagetype determines the switch case. end of inputs
+            i++;//increment for package count
+            Person sender = new Person(senderName, senderAddress, senderCity, senderState, senderZipcode); //creates Person "sender" and "recipient" then passes those to Package below.
             Person recipient = new Person(recipientName, recipientAddress, recipientCity, recipientState, recipientZipcode);
             System.out.println("----------------PACKAGE "+i+"----------------");
-            switch (packageType){
+            switch (packageType){//switch for different packages
                 case 1->{
                     Package packs= new Package(sender.name, sender.address, sender.city, sender.state, sender.zipcode,
                             recipient.name, recipient.address, recipient.city, recipient.state, recipient.zipcode,
                             packageWeight, packageCost);
-                    System.out.println(packs);
-                    totalCostVec.add(packs.totalCost);
+                    System.out.println(packs);//prints a toString method. check the other java file.
+                    totalCostVec.add(packs.totalCost);//adds the total cost of this instance of package to the vector
+                    //all cases are the same. the only difference is calcuations of totalCost.
 
                 }
                 case 2->{
@@ -58,12 +57,15 @@ public class Main {
                     totalCostVec.add(packs.totalCost);
                 }
             }
-            System.out.println("exit? y/n");
-            exit = sc.next().charAt(0);
-        }while(!(exit=='y'));
+            do{
+                System.out.println("add another package? y/n");//ask if the user wants to add or exit
+                exit = sc.next().charAt(0);
+            }while(!(exit=='y'||exit=='n'));
+        }while(!(exit=='n'));//loop then adds another package if not the user opted not to exit
         totalPackage();
     }
 
+    //all of these input prints the data needed then asks the user for an input corresponding to that then returns it.
     static String inputName(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Name: ");
@@ -126,6 +128,6 @@ public class Main {
         double sum = (double) totalCostVec.stream()
                 .mapToDouble(Double::valueOf) // or .map(i -> i)
                 .sum();
-        System.out.println("total sum of all packages: "+sum);
+        System.out.println("total sum of all packages: "+sum + " PHP");
     }
 }
