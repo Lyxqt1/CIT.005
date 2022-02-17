@@ -31,26 +31,25 @@ public class Main {
             i++;//increment for package count
             Person sender = new Person(senderName, senderAddress, senderCity, senderState, senderZipcode); //creates Person with constructor, "sender" and "recipient" then passes those to Package below.
             Person recipient = new Person(recipientName, recipientAddress, recipientCity, recipientState, recipientZipcode);
-
-
             System.out.println("----------------PACKAGE "+i+"----------------");
-            switch (packageType) {//switch for different packages
-                case 1 -> {
-                    Package packs = new Package(sender.name, sender.address, sender.city, sender.state, sender.zipcode,
+            switch (packageType){//switch for different packages
+                case 1->{
+                    Package packs= new Package(sender.name, sender.address, sender.city, sender.state, sender.zipcode,
                             recipient.name, recipient.address, recipient.city, recipient.state, recipient.zipcode,
                             packageWeight, packageCost);
                     System.out.println(packs);//prints a toString method. check the other java file.
                     totalCostVec.add(packs.totalCost);//adds the total cost of this instance of package to the vector
                     //all cases are the same. the only difference is calcuations of totalCost.
+
                 }
-                case 2 -> {
+                case 2->{
                     TwoDayPackage packs = new TwoDayPackage(sender.name, sender.address, sender.city, sender.state, sender.zipcode,
                             recipient.name, recipient.address, recipient.city, recipient.state, recipient.zipcode,
                             packageWeight, packageCost, flatFee);
                     System.out.println(packs);
                     totalCostVec.add(packs.totalCost);
                 }
-                case 3 -> {
+                case 3->{
                     OvernightPackage packs = new OvernightPackage(sender.name, sender.address, sender.city, sender.state, sender.zipcode,
                             recipient.name, recipient.address, recipient.city, recipient.state, recipient.zipcode,
                             packageWeight, packageCost, additionalOvernight);
