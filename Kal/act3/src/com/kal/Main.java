@@ -5,6 +5,7 @@ import java.util.Vector;
 public class Main {
     static Vector<Double> totalCostVec = new Vector<Double>();//storing the sum of all total cost of each packages
     public static void main(String[] args) {
+        new PackageGUI();
         double packageCost = 69.42d;//base cost for packages, defined by the company which is me
         char exit;//char for exiting the loop
         Scanner sc = new Scanner(System.in);
