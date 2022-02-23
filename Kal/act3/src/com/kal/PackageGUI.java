@@ -4,24 +4,26 @@ package com.kal;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.util.Objects;
 import javax.swing.*;
-import javax.swing.table.JTableHeader;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 import static com.kal.Main.*;
-import static com.kal.TestingPack.*;
-
 
 public class PackageGUI extends JFrame implements ActionListener{
+    public static double packageCost = 69D;
+    public static int packageType = 0;
+    public static int packageCount = 0;
     static JTextField costTf;
     static JCheckBox stdShipping;
     static JCheckBox tdShipping;
     static JCheckBox onShipping;
-    static JTextField inputW;
+    static JFormattedTextField inputW;
     static JButton calculate;
     static JTextField outputCost;
-    static JTextField outuptTotal;
+    static JTextField outputTotal;
+    static JTextArea textAreaList;
 
     static JTextField senderName;
     static JTextField senderAddress;
@@ -33,6 +35,7 @@ public class PackageGUI extends JFrame implements ActionListener{
     static JTextField recipientAddress;
     static JTextField recipientCity;
     static JTextField recipientState;
+    static JPanel listPanel;
     static JTextField recipientZip;
 
     PackageGUI(){}
@@ -45,6 +48,7 @@ public class PackageGUI extends JFrame implements ActionListener{
         JFrame frame = new JFrame("Welcome to FedEx®, DHL® and UPS®");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(450, 690);
+        JTabbedPane tp=new JTabbedPane();
 
         JMenuBar mb = new JMenuBar();
         JMenu m1 = new JMenu("Set Standard Fee");
@@ -72,26 +76,65 @@ public class PackageGUI extends JFrame implements ActionListener{
         stdShipping.setBounds(0,1,150,20);
         tdShipping.setBounds(150,1,150,20);
         onShipping.setBounds(300, 1, 150,20);
-        JLabel bgText=new JLabel();
         ButtonGroup bg = new ButtonGroup();
         bg.add(stdShipping);bg.add(tdShipping);bg.add(onShipping);
 
 
 
         JLabel textW = new JLabel("weight in ounce:");
-        inputW = new JTextField(10);
+        inputW = new JFormattedTextField();
         textW.setBounds(5, 21,100,20);
         inputW.setBounds(100,21,50,20);
+        @FunctionalInterface
+        interface SimpleDocumentListener extends DocumentListener {
+            void update(DocumentEvent e);
+
+            @Override
+            default void insertUpdate(DocumentEvent e) {
+                update(e);
+            }
+            @Override
+            default void removeUpdate(DocumentEvent e) {
+                update(e);
+            }
+            @Override
+            default void changedUpdate(DocumentEvent e) {
+                update(e);
+            }
+        }
+        inputW.getDocument().addDocumentListener(new SimpleDocumentListener() {
+            @Override
+            public void update(DocumentEvent e) {
+                if(Objects.equals(inputW.getText(), "")){
+                    calculate.setEnabled(doublecheck());
+                }else{
+                    calculate.setEnabled(doublecheck());
+                }
+            }
+        });
+        costTf.getDocument().addDocumentListener(new SimpleDocumentListener() {
+            @Override
+            public void update(DocumentEvent e) {
+                if(Objects.equals(costTf.getText(),"")){
+                    setCost.setEnabled(false);
+                }else{
+                    setCost.setEnabled(doublecheck());
+                }
+            }
+        });
 
         JPanel calc = new JPanel();
         JLabel textCost = new JLabel("package cost: ");
         JLabel overallCost = new JLabel("total cost: ");
-        outuptTotal = (new JTextField("",10));
+        outputTotal = (new JTextField("",10));
         outputCost = new JTextField("",6);
+        outputTotal.setEditable(false);
+        outputCost.setEditable(false);
         calculate = new JButton("calculate");
         calculate.addActionListener(pGUI);
         calculate.setSize( 100,20);
-        calc.add(calculate);calc.add(textCost);calc.add(outputCost);calc.add(overallCost);calc.add(outuptTotal);
+        calculate.setEnabled(false);
+        calc.add(calculate);calc.add(textCost);calc.add(outputCost);calc.add(overallCost);calc.add(outputTotal);
 
         JLabel textSender = new JLabel("Sender:");
         textSender.setBounds(5,41,150,20);
@@ -148,8 +191,11 @@ public class PackageGUI extends JFrame implements ActionListener{
         recipientZip = new JTextField("");
         textRecipientZip.setBounds(5,261,150,20);
         recipientZip.setBounds(100,261,250,20);
-        frame.getContentPane().add(BorderLayout.NORTH, mb);
 
+
+        frame.getContentPane().add(BorderLayout.NORTH, mb);
+        listPanel = new JPanel();
+        packageListPanel();
         mainPanel.add(stdShipping); mainPanel.add(tdShipping); mainPanel.add(onShipping);
         mainPanel.add(textW);mainPanel.add(inputW);
         mainPanel.add(textSender);
@@ -164,41 +210,61 @@ public class PackageGUI extends JFrame implements ActionListener{
         mainPanel.add(textRecipientAddress);mainPanel.add(recipientAddress);
         mainPanel.add(textRecipientState);mainPanel.add(recipientState);
         mainPanel.add(textRecipientZip);mainPanel.add(recipientZip);
-        frame.getContentPane().add(BorderLayout.CENTER,mainPanel);
+        frame.getContentPane().add(BorderLayout.CENTER,tp);
         frame.getContentPane().add(BorderLayout.SOUTH,calc);
-
+        tp.add("add package",mainPanel);
+        tp.add("packages list",listPanel);
         frame.setVisible(true);
     }
-    public static void main(String[] args) {
-        mainWindow();
+    static void packageListPanel(){
+        textAreaList = new JTextArea("");
+        textAreaList.setEditable(false);
+        textAreaList.setBounds(0,0,420,690);
+        textAreaList.setLineWrap(true);
+        textAreaList.setWrapStyleWord(true);
+        listPanel.add(textAreaList);
+    }
+
+    public static boolean doublecheck(){
+        try{
+            double value = Double.parseDouble(inputW.getText());
+            double value2 = Double.parseDouble(costTf.getText());
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
     }
     public void actionPerformed(ActionEvent e)
     {
+
         String s = e.getActionCommand();
         if (s.equals("save cost")) {
             packageCost= Double.parseDouble(costTf.getText());
-            System.out.println(packageCost);
+            System.out.println("cost per ounce updated: "+packageCost);
+        }
+        if(Objects.equals(inputW.getText(), "")){
+            calculate.setEnabled(false);
+        }else {
+            calculate.setEnabled(true);
         }
         if(stdShipping.isSelected()){
             tdShipping.setSelected(false);
             onShipping.setSelected(false);
-            TestingPack.packageType=0;
-            System.out.println(TestingPack.packageType);
+            packageType=0;
         }
         if(tdShipping.isSelected()){
             stdShipping.setSelected(false);
             onShipping.setSelected(false);
-            TestingPack.packageType=1;
-            System.out.println(TestingPack.packageType);
+            packageType=1;
         }
         if(onShipping.isSelected()){
             stdShipping.setSelected(false);
             tdShipping.setSelected(false);
-            TestingPack.packageType=2;
-            System.out.println(TestingPack.packageType);
+            packageType=2;
         }
         if(s.equals("calculate")){
-
+            packageCount++;
             double calcWeight = Double.parseDouble(inputW.getText());
 
             Person sender = new Person(senderName.getText(),senderAddress.getText(),senderCity.getText(),senderState.getText(),senderZip.getText()); //creates Person with constructor, "sender" and "recipient" then passes those to Package below.
@@ -209,12 +275,14 @@ public class PackageGUI extends JFrame implements ActionListener{
                     Package pack = new Package(sender.name, sender.address, sender.city, sender.state, sender.zipcode,
                             recipient.name, recipient.address, recipient.city, recipient.state, recipient.zipcode,
                             calcWeight, packageCost);
-                    System.out.println(pack);//prints a toString method. check the other java file.
+                   //prints a toString method. check the other java file.
                     outputCost.setText(String.valueOf(pack.totalCost));
+                    System.out.println(pack);
                     totalCostVec.add(pack.totalCost);//adds the total cost of this instance of package to the vector
-                    //all cases are the same. the only difference is calcuations of totalCost.
+                    //all cases are the same. the only difference is calculations of totalCost.
                     String  i = String.valueOf(totalPackage());
-                    outuptTotal.setText(i);
+                    outputTotal.setText(i);
+                    textAreaList.append(pack.toString());
                 }
                 case 1 -> {
                     TwoDayPackage pack = new TwoDayPackage(sender.name, sender.address, sender.city, sender.state, sender.zipcode,
@@ -224,7 +292,7 @@ public class PackageGUI extends JFrame implements ActionListener{
                     totalCostVec.add(pack.totalCost);
                     outputCost.setText(String.valueOf(pack.totalCost));
                     String  i = String.valueOf(totalPackage());
-                    outuptTotal.setText(i);
+                    outputTotal.setText(i);
                 }
                 case 2 -> {
                     OvernightPackage pack = new OvernightPackage(sender.name, sender.address, sender.city, sender.state, sender.zipcode,
@@ -234,10 +302,15 @@ public class PackageGUI extends JFrame implements ActionListener{
                     outputCost.setText(String.valueOf(pack.totalCost));
                     totalCostVec.add(pack.totalCost);
                     String  i = String.valueOf(totalPackage());
-                    outuptTotal.setText(i);
+                    outputTotal.setText(i);
 
                 }
             }
+
         }
+    }
+
+    public static void main(String[] args) {
+        mainWindow();
     }
 }
