@@ -2,14 +2,14 @@ package com.kal;
 
 public class OvernightPackage extends Package{
     String senderName, senderAddress, senderCity, senderState;
-    private int senderZip;
+    private String senderZip;
     private String recipientName, recipientAddress, recipientCity, recipientState;
-    private int recipientZip;
+    private String recipientZip;
     private static double packWeight;
     private static double packCost;
     double totalCost;
     private static double additionalFee;
-    public OvernightPackage(String senderName, String senderAddress, String senderCity, String senderState, int senderZip, String recipientName, String recipientAddress, String recipientCity, String recipientState, int recipientZip, double packageWeight, double packageCost, double additionalOvernight) {
+    public OvernightPackage(String senderName, String senderAddress, String senderCity, String senderState, String senderZip, String recipientName, String recipientAddress, String recipientCity, String recipientState, String recipientZip, double packageWeight, double packageCost, double additionalOvernight) {
         super(senderName, senderAddress, senderCity, senderState, senderZip, recipientName, recipientAddress, recipientCity, recipientState, recipientZip, packageWeight, packageCost);
         this.senderName = senderName; this.senderAddress = senderAddress; this.senderCity = senderCity; this.senderState = senderState; this.senderZip = senderZip;
         this.recipientName = recipientName; this.recipientAddress = recipientAddress; this.recipientCity = recipientCity; this.recipientState = recipientState; this.recipientZip = recipientZip;

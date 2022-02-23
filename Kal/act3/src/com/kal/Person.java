@@ -5,9 +5,9 @@ public class Person {
     String address;
     String city;
     String state;
-    int zipcode;
+    String zipcode;
 
-    public Person(String name, String address, String city, String state, int zipcode){
+    public Person(String name, String address, String city, String state, String zipcode){
         this.name = name;
         this.address = address;
         this.city = city;

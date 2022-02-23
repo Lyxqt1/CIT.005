@@ -3,29 +3,29 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class Main {
+    public static final double flatFee = 200;//given
+    public static final double additionalOvernight = 100;//given
     static Vector<Double> totalCostVec = new Vector<Double>();//storing the sum of all total cost of each packages
     public static void main(String[] args) {
         new PackageGUI();
         double packageCost = 69.42d;//base cost for packages, defined by the company which is me
         char exit;//char for exiting the loop
         Scanner sc = new Scanner(System.in);
-        final double flatFee = 200;//given
-        final double additionalOvernight = 100;//given
         int i = 0; //tracks number of packages
         System.out.println("Welcome to FedEx®, DHL® and UPS®\n");
         do {
             System.out.println("enter the details below\n----------------SENDER----------------");
-            String senderName = inputName(); //all of these input prints the data needed then asks the user for an input corresponding to that then returns it.
+            String senderName = String.valueOf(PackageGUI.senderName); //all of these input prints the data needed then asks the user for an input corresponding to that then returns it.
             String senderAddress = inputAddress();
             String senderCity = inputCity();
             String senderState = inputState();
-            int senderZipcode = inputZipcode();
+            String senderZipcode = inputZipcode();
             System.out.println("\n----------------RECIPIENT----------------");
             String recipientName = inputName();
             String recipientAddress = inputAddress();
             String recipientCity = inputCity();
             String recipientState = inputState();
-            int recipientZipcode = inputZipcode();
+            String recipientZipcode = inputZipcode();
             System.out.println("----------------Package details----------------");
             double packageWeight = inputPackageWeight();
             int packageType = inputPackageType();//packagetype determines the switch case. end of inputs
@@ -92,16 +92,11 @@ public class Main {
         String state = sc.nextLine();
         return state;
     }
-    static int inputZipcode(){
-        int zipcode;
+    static String inputZipcode(){
+        String zipcode;
         Scanner sc = new Scanner(System.in);
-        do{
-            System.out.println("Zipcode:");
-            zipcode = sc.nextInt();
-            if((zipcode<=0)){
-                System.out.println("re-enter a valid Zipcode - integer");
-            }
-        }while(zipcode<=0);
+        System.out.println("Zipcode:");
+        zipcode = sc.nextLine();
         sc.nextLine();
         return zipcode;
     }
@@ -132,10 +127,11 @@ public class Main {
         return packageWeight;
     }
 
-    static void totalPackage(){//method for adding all of the values from the vector of all costs of packages
+    static double totalPackage(){//method for adding all of the values from the vector of all costs of packages
         double sum = totalCostVec.stream()
                 .mapToDouble(Double::valueOf)
                 .sum();
         System.out.println("total sum of all packages: "+sum + " PHP");
+        return sum;
     }
 }
