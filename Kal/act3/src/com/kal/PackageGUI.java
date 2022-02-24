@@ -8,6 +8,7 @@ import java.util.Objects;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.JScrollPane;
 
 import static com.kal.Main.*;
 
@@ -106,9 +107,9 @@ public class PackageGUI extends JFrame implements ActionListener{
             @Override
             public void update(DocumentEvent e) {
                 if(Objects.equals(inputW.getText(), "")){
-                    calculate.setEnabled(doublecheck());
+                    calculate.setEnabled(doublecheckWeight());
                 }else{
-                    calculate.setEnabled(doublecheck());
+                    calculate.setEnabled(doublecheckWeight());
                 }
             }
         });
@@ -116,16 +117,16 @@ public class PackageGUI extends JFrame implements ActionListener{
             @Override
             public void update(DocumentEvent e) {
                 if(Objects.equals(costTf.getText(),"")){
-                    setCost.setEnabled(false);
+                    setCost.setEnabled(doublecheckCost());
                 }else{
-                    setCost.setEnabled(doublecheck());
+                    setCost.setEnabled(doublecheckCost());
                 }
             }
         });
 
         JPanel calc = new JPanel();
         JLabel textCost = new JLabel("package cost: ");
-        JLabel overallCost = new JLabel("total cost: ");
+        JLabel overallCost = new JLabel("accumulated cost: ");
         outputTotal = (new JTextField("",10));
         outputCost = new JTextField("",6);
         outputTotal.setEditable(false);
@@ -219,24 +220,38 @@ public class PackageGUI extends JFrame implements ActionListener{
     static void packageListPanel(){
         textAreaList = new JTextArea("");
         textAreaList.setEditable(false);
-        textAreaList.setBounds(0,0,420,690);
         textAreaList.setLineWrap(true);
         textAreaList.setWrapStyleWord(true);
-        listPanel.add(textAreaList);
+        JScrollBar listScrollBar = new JScrollBar();
+        JScrollPane scrollPackageList = new JScrollPane(textAreaList);
+        scrollPackageList.add(listScrollBar);
+        scrollPackageList.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPackageList.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPackageList.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        scrollPackageList.setMinimumSize(new Dimension(420, 520));
+        scrollPackageList.setPreferredSize(new Dimension(420, 520));
+        listPanel.add(scrollPackageList);
     }
 
-    public static boolean doublecheck(){
+    public static boolean doublecheckWeight(){
         try{
             double value = Double.parseDouble(inputW.getText());
-            double value2 = Double.parseDouble(costTf.getText());
             return true;
         }
         catch (Exception e){
             return false;
         }
     }
-    public void actionPerformed(ActionEvent e)
-    {
+    public static boolean doublecheckCost(){
+        try{
+            double value = Double.parseDouble(costTf.getText());
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+    public void actionPerformed(ActionEvent e) {
 
         String s = e.getActionCommand();
         if (s.equals("save cost")) {
@@ -293,6 +308,7 @@ public class PackageGUI extends JFrame implements ActionListener{
                     outputCost.setText(String.valueOf(pack.totalCost));
                     String  i = String.valueOf(totalPackage());
                     outputTotal.setText(i);
+                    textAreaList.append(pack.toString());
                 }
                 case 2 -> {
                     OvernightPackage pack = new OvernightPackage(sender.name, sender.address, sender.city, sender.state, sender.zipcode,
@@ -303,10 +319,14 @@ public class PackageGUI extends JFrame implements ActionListener{
                     totalCostVec.add(pack.totalCost);
                     String  i = String.valueOf(totalPackage());
                     outputTotal.setText(i);
+                    textAreaList.append(pack.toString());
 
                 }
             }
 
+            senderName.setText(""); senderAddress.setText("");senderCity.setText("");senderState.setText("");senderZip.setText("");
+            inputW.setText("");
+            recipientName.setText("");recipientAddress.setText("");recipientCity.setText("");recipientState.setText("");recipientZip.setText("");
         }
     }
 

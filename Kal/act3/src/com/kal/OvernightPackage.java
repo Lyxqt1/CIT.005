@@ -19,8 +19,8 @@ public class OvernightPackage extends Package{
         return (packCost+additionalFee)*packWeight;
     }
     public String toString(){
-        return "PACKAGE "+PackageGUI.packageCount+"\n----------------SENDER----------------\nName: " + senderName + "\nAddress: " + senderAddress + "\nCity: " + senderCity +"\nState: " + senderState
+        return "---------------PACKAGE "+PackageGUI.packageCount+"---------------\n----------------SENDER----------------\nName: " + senderName + "\nAddress: " + senderAddress + "\nCity: " + senderCity +"\nState: " + senderState
                 + "\nZipcode: " + senderZip +"\n----------------RECIPIENT----------------\nName: " + recipientName+"\nAddress: " + recipientAddress+"\nCity: " + recipientCity
-                +"\nState: " + recipientState+"\nZipcode: " + recipientZip+"\nShipping type: Overnight Shipping ------ Shipping cost: " + totalCost +" PHP\n\n";
+                +"\nState: " + recipientState+"\nZipcode: " + recipientZip+"\nShipping type: Overnight Shipping ------ Shipping cost: " + totalCost +" PHP\n\n\n";
     }
 }
