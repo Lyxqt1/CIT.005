@@ -48,7 +48,7 @@ public class PackageGUI extends JFrame implements ActionListener{
         PackageGUI pGUI = new PackageGUI();
         JFrame frame = new JFrame("Welcome to FedEx®, DHL® and UPS®");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(450, 690);
+        frame.setSize(500, 410);
         JTabbedPane tp=new JTabbedPane();
 
         JMenuBar mb = new JMenuBar();
@@ -82,10 +82,11 @@ public class PackageGUI extends JFrame implements ActionListener{
 
 
 
-        JLabel textW = new JLabel("weight in ounce:");
+        JLabel textW = new JLabel("weight(oz):");
         inputW = new JFormattedTextField();
-        textW.setBounds(5, 21,100,20);
-        inputW.setBounds(100,21,50,20);
+        textW.setBounds(5, 21,80,20);
+        inputW.setBounds(80,21,50,20);
+
         @FunctionalInterface
         interface SimpleDocumentListener extends DocumentListener {
             void update(DocumentEvent e);
@@ -133,65 +134,65 @@ public class PackageGUI extends JFrame implements ActionListener{
         outputCost.setEditable(false);
         calculate = new JButton("calculate");
         calculate.addActionListener(pGUI);
-        calculate.setSize( 100,20);
+        calculate.setSize( 80,20);
         calculate.setEnabled(false);
         calc.add(calculate);calc.add(textCost);calc.add(outputCost);calc.add(overallCost);calc.add(outputTotal);
 
-        JLabel textSender = new JLabel("Sender:");
-        textSender.setBounds(5,41,150,20);
+        JLabel textSender = new JLabel("----------------------------------------------------Sender----------------------------------------------------");
+        textSender.setBounds(5,41,500,20);
         JLabel textSenderName = new JLabel("name: ");
         senderName = new JTextField("");
         textSenderName.setBounds(5,61,150,20);
-        senderName.setBounds(100,61,250,20);
+        senderName.setBounds(80,61,390,20);
 
         JLabel textSenderAddress = new JLabel("address: ");
         senderAddress = new JTextField("");
         textSenderAddress.setBounds(5,81,150,20);
-        senderAddress.setBounds(100,81,250,20);
+        senderAddress.setBounds(80,81,390,20);
 
         JLabel textSenderCity = new JLabel("city: ");
         senderCity = new JTextField("");
         textSenderCity.setBounds(5,101,150,20);
-        senderCity.setBounds(100,101,250,20);
+        senderCity.setBounds(80,101,390,20);
 
         JLabel textSenderState = new JLabel("state: ");
         senderState = new JTextField("");
         textSenderState.setBounds(5,121,150,20);
-        senderState.setBounds(100,121,250,20);
+        senderState.setBounds(80,121,390,20);
 
         JLabel textSenderZip = new JLabel("zip code: ");
         senderZip = new JTextField("");
         textSenderZip.setBounds(5,141,150,20);
-        senderZip.setBounds(100,141,250,20);
+        senderZip.setBounds(80,141,390,20);
 
 
 
-        JLabel textRecipient = new JLabel("Recipient:");
-        textRecipient.setBounds(5,161,150,20);
+        JLabel textRecipient = new JLabel("---------------------------------------------------Recipient---------------------------------------------------");
+        textRecipient.setBounds(5,161,500,20);
         JLabel textRecipientName = new JLabel("name: ");
         recipientName = new JTextField("");
         textRecipientName.setBounds(5,181,150,20);
-        recipientName.setBounds(100,181,250,20);
+        recipientName.setBounds(80,181,390,20);
 
         JLabel textRecipientAddress = new JLabel("address: ");
         recipientAddress = new JTextField("");
         textRecipientAddress.setBounds(5,201,150,20);
-        recipientAddress.setBounds(100,201,250,20);
+        recipientAddress.setBounds(80,201,390,20);
 
         JLabel textRecipientCity = new JLabel("city: ");
         recipientCity = new JTextField("");
         textRecipientCity.setBounds(5,221,150,20);
-        recipientCity.setBounds(100,221,250,20);
+        recipientCity.setBounds(80,221,390,20);
 
         JLabel textRecipientState = new JLabel("state: ");
         recipientState = new JTextField("");
         textRecipientState.setBounds(5,241,150,20);
-        recipientState.setBounds(100,241,250,20);
+        recipientState.setBounds(80,241,390,20);
 
         JLabel textRecipientZip = new JLabel("zip code: ");
         recipientZip = new JTextField("");
         textRecipientZip.setBounds(5,261,150,20);
-        recipientZip.setBounds(100,261,250,20);
+        recipientZip.setBounds(80,261,390,20);
 
 
         frame.getContentPane().add(BorderLayout.NORTH, mb);
@@ -227,9 +228,9 @@ public class PackageGUI extends JFrame implements ActionListener{
         scrollPackageList.add(listScrollBar);
         scrollPackageList.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPackageList.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPackageList.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
-        scrollPackageList.setMinimumSize(new Dimension(420, 520));
-        scrollPackageList.setPreferredSize(new Dimension(420, 520));
+        scrollPackageList.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
+        scrollPackageList.setMinimumSize(new Dimension(490, 360));
+        scrollPackageList.setPreferredSize(new Dimension(490, 360));
         listPanel.add(scrollPackageList);
     }
 

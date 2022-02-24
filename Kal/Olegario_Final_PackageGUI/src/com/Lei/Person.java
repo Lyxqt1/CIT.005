@@ -5,10 +5,10 @@ public class Person{
     String Address;
     String City;
     String State;
-    int ZIP;
+    String ZIP;
 
 
-    public Person(String Name, String Address, String City, String State, int ZIP){
+    public Person(String Name, String Address, String City, String State, String ZIP){
         this.Name = Name;
         this.Address = Address;
         this.City = City;

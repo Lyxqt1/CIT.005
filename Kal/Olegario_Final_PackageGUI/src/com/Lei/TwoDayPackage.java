@@ -1,16 +1,14 @@
 package com.Lei;
 
 public class TwoDayPackage extends Package{
-    String SenderName, SenderAddress, SenderCity, SenderState;
-    private int SenderZIP;
-    private String ReceiverName, ReceiverAddress, ReceiverCity, ReceiverState;
-    private int ReceiverZIP;
+    String SenderName, SenderAddress, SenderCity, SenderState, SenderZIP;
+    private String ReceiverName, ReceiverAddress, ReceiverCity, ReceiverState, ReceiverZIP;
     private static double packweight;
     private static double packcost;
     double totalcost;
     private static double flatFee;
-    public TwoDayPackage(String SenderName, String SenderAddress, String SenderCity, String SenderState, int SenderZIP,
-                         String ReceiverName, String ReceiverAddress, String ReceiverCity, String ReceiverState, int ReceiverZIP,
+    public TwoDayPackage(String SenderName, String SenderAddress, String SenderCity, String SenderState, String SenderZIP,
+                         String ReceiverName, String ReceiverAddress, String ReceiverCity, String ReceiverState, String ReceiverZIP,
                          double PackageWeight, double packagecost, double flatFee){
         super(SenderName, SenderAddress, SenderCity, SenderState, SenderZIP, ReceiverName, ReceiverAddress, ReceiverCity, ReceiverState, ReceiverZIP, PackageWeight, packagecost);
         this.SenderName = SenderName;
@@ -48,7 +46,9 @@ public class TwoDayPackage extends Package{
         System.out.println("State: "+ReceiverState);
         System.out.println("ZIPcode: "+ReceiverZIP);
         System.out.println("Shipping type: Two Day \n Shipping cost: " +totalcost+ "PHP");
-        return "\n";
+        return "PACKAGE "+MainGUI.packsCount+"\nSENDER\nName: " + SenderName + "\nAddress: " + SenderAddress + "\nCity: " + SenderCity +"\nState: " + SenderState
+                + "\nZipcode: " + SenderZIP +"\nRECIPIENT\nName: " + ReceiverName+"\nAddress: " + ReceiverAddress+"\nCity: " + ReceiverCity
+                +"\nState: " + ReceiverState+"\nZipcode: " + ReceiverZIP+"\nShipping type: Two Day ------ Shipping cost: " + totalcost +" PHP";
 
     }
 

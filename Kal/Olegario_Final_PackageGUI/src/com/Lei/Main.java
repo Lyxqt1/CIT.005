@@ -20,7 +20,7 @@ public class Main{
             String SenderAddress = inputSenderAddress();
             String SenderCity = inputSenderCity();
             String SenderState = inputSenderState();
-            int SenderZIP = inputSenderZIP();
+            String SenderZIP = inputSenderZIP();
             Person Sender = new Person(SenderName, SenderAddress, SenderCity, SenderState, SenderZIP);
 
 
@@ -29,7 +29,7 @@ public class Main{
             String ReceiverAddress = inputReceiverAddress();
             String ReceiverCity = inputReceiverCity();
             String ReceiverState = inputReceiverState();
-            int ReceiverZIP = inputReceiverZIP();
+            String ReceiverZIP = inputReceiverZIP();
             Person Receiver = new Person(ReceiverName, ReceiverAddress, ReceiverCity, ReceiverState, ReceiverZIP);
 
             System.out.println("Package details: ");
@@ -107,10 +107,10 @@ public class Main{
         String state = sc.nextLine();
         return state;
     }
-    static int inputSenderZIP(){
+    static String inputSenderZIP(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Zipcode: ");
-        int ZIP = sc.nextInt();
+        String ZIP = sc.nextLine();
         sc.nextLine();
         return ZIP;
     }
@@ -140,10 +140,10 @@ public class Main{
         String state = sc.nextLine();
         return state;
     }
-    static int inputReceiverZIP(){
+    static String inputReceiverZIP(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Zipcode: ");
-        int zipcode = sc.nextInt();
+        String zipcode = sc.nextLine();
         sc.nextLine();
         return zipcode;
     }
@@ -186,8 +186,9 @@ public class Main{
         return weight;
     }
 
-    static void total(){
+    static Object total(){
         double sum = calcCostVec.stream().mapToDouble(Double::valueOf).sum();
         System.out.println("total payment of packages: " +sum+ "PHP. Thankyou!");
+        return sum+" PHP";
     }
 }

@@ -1,16 +1,14 @@
 package com.Lei;
 
 public class Package{
-    String SenderName, SenderAddress,SenderCity, SenderState, ReceiverName, ReceiverAddress, ReceiverCity, ReceiverState;
-    private int SenderZIP;
-    private int ReceiverZIP;
+    String SenderName, SenderAddress,SenderCity, SenderState, ReceiverName, ReceiverAddress, ReceiverCity, ReceiverState, SenderZIP,ReceiverZIP;
     private static double packweight;
     private static double packcost;
     double totalcost;
 
     public Package(String SenderName, String SenderAddress, String SenderCity,
-                   String SenderState, int SenderZIP, String ReceiverName,String ReceiverAddress,
-                   String ReceiverCity,String ReceiverState, int ReceiverZIP,
+                   String SenderState, String SenderZIP, String ReceiverName,String ReceiverAddress,
+                   String ReceiverCity,String ReceiverState, String ReceiverZIP,
                    double PackageWeight,double packagecost){
         this.SenderName = SenderName;
         this.SenderAddress = SenderAddress;
@@ -44,6 +42,8 @@ public class Package{
         System.out.println("State: "+ReceiverState);
         System.out.println("ZIPcode: "+ReceiverZIP);
         System.out.println("Shipping type: Standard \n Shipping cost: " +totalcost+ "PHP");
-        return "\n";
+        return "PACKAGE "+MainGUI.packsCount+"\nSENDER\nName: " + SenderName + "\nAddress: " + SenderAddress + "\nCity: " + SenderCity +"\nState: " + SenderState
+                + "\nZipcode: " + SenderZIP +"\nRECIPIENT\nName: " + ReceiverName+"\nAddress: " + ReceiverAddress+"\nCity: " + ReceiverCity
+                +"\nState: " + ReceiverState+"\nZipcode: " + ReceiverZIP+"\nShipping type: Standard ------ Shipping cost: " + totalcost +" PHP";
     }
 }
