@@ -23,9 +23,9 @@ public class Package {
     }
 
     public String toString(){
-        return "---------------PACKAGE "+PackageGUI.packageCount+"---------------\n----------------SENDER----------------\nName: " + senderName + "\nAddress: " + senderAddress + "\nCity: " + senderCity +"\nState: " + senderState
+        return "---------------PACKAGE "+PackageGUI.packageCount+"---------------\n-----------------SENDER-----------------\nName: " + senderName + "\nAddress: " + senderAddress + "\nCity: " + senderCity +"\nState: " + senderState
                 + "\nZipcode: " + senderZip +"\n----------------RECIPIENT----------------\nName: " + recipientName+"\nAddress: " + recipientAddress+"\nCity: " + recipientCity
-                +"\nState: " + recipientState+"\nZipcode: " + recipientZip+"\nShipping type: Standard base ------ Shipping cost: " + totalCost +" PHP\n\n\n";
+                +"\nState: " + recipientState+"\nZipcode: " + recipientZip+"\nShipping type: Standard shipping ------ Shipping cost: " + totalCost +" PHP\n\n\n";
     }
 }
 

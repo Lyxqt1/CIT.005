@@ -44,6 +44,6 @@ public class Package{
         System.out.println("Shipping type: Standard \n Shipping cost: " +totalcost+ "PHP");
         return "PACKAGE "+MainGUI.packsCount+"\nSENDER\nName: " + SenderName + "\nAddress: " + SenderAddress + "\nCity: " + SenderCity +"\nState: " + SenderState
                 + "\nZipcode: " + SenderZIP +"\nRECIPIENT\nName: " + ReceiverName+"\nAddress: " + ReceiverAddress+"\nCity: " + ReceiverCity
-                +"\nState: " + ReceiverState+"\nZipcode: " + ReceiverZIP+"\nShipping type: Standard ------ Shipping cost: " + totalcost +" PHP";
+                +"\nState: " + ReceiverState+"\nZipcode: " + ReceiverZIP+"\nShipping type: Standard\nShipping cost: " + totalcost +" PHP";
     }
 }

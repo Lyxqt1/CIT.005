@@ -48,7 +48,7 @@ public class OvernightPackage extends Package{
         System.out.println("Shipping type: Overnight \n Shipping cost: " +totalcost+ "PHP");
         return "PACKAGE "+MainGUI.packsCount+"\nSENDER\nName: " + SenderName + "\nAddress: " + SenderAddress + "\nCity: " + SenderCity +"\nState: " + SenderState
                 + "\nZipcode: " + SenderZIP +"\nRECIPIENT\nName: " + ReceiverName+"\nAddress: " + ReceiverAddress+"\nCity: " + ReceiverCity
-                +"\nState: " + ReceiverState+"\nZipcode: " + ReceiverZIP+"\nShipping type: Overnight ------ Shipping cost: " + totalcost +" PHP";
+                +"\nState: " + ReceiverState+"\nZipcode: " + ReceiverZIP+"\nShipping type: Overnight\nShipping cost: " + totalcost +" PHP";
 
     }
 

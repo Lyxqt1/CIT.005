@@ -48,7 +48,7 @@ public class TwoDayPackage extends Package{
         System.out.println("Shipping type: Two Day \n Shipping cost: " +totalcost+ "PHP");
         return "PACKAGE "+MainGUI.packsCount+"\nSENDER\nName: " + SenderName + "\nAddress: " + SenderAddress + "\nCity: " + SenderCity +"\nState: " + SenderState
                 + "\nZipcode: " + SenderZIP +"\nRECIPIENT\nName: " + ReceiverName+"\nAddress: " + ReceiverAddress+"\nCity: " + ReceiverCity
-                +"\nState: " + ReceiverState+"\nZipcode: " + ReceiverZIP+"\nShipping type: Two Day ------ Shipping cost: " + totalcost +" PHP";
+                +"\nState: " + ReceiverState+"\nZipcode: " + ReceiverZIP+"\nShipping type: Two Day\nShipping cost: " + totalcost +" PHP";
 
     }
 

@@ -5,6 +5,7 @@ import java.util.Vector;
 public class Main{
     static Vector<Double>calcCostVec = new Vector<Double>();
     public static void main(String[] args) {
+        MainGUI.main();
         Scanner sc = new Scanner(System.in);
         char end;
         int i = 0;
