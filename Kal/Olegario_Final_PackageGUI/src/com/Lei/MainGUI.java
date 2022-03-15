@@ -34,6 +34,8 @@ public class MainGUI extends JFrame implements ActionListener {
         mainPanelGUI.setMinimumSize(new Dimension(410,390));
 
         s1.setDividerLocation(frame.getWidth()/2-25);
+
+
         taOutput = new JTextArea();
         JLabel outputLabel = new JLabel("Package List: ");
         JLabel sumPackagesLabel = new JLabel("Sum of all packages: ");
@@ -41,6 +43,7 @@ public class MainGUI extends JFrame implements ActionListener {
         taOutput.setEditable(false);
         taOutput.setLineWrap(true);
         taOutput.setWrapStyleWord(true);
+
         JScrollBar outputScrollBar = new JScrollBar();
         JScrollPane scrollPackageList = new JScrollPane(taOutput);
         scrollPackageList.add(outputScrollBar);
