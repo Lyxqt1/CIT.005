@@ -1,5 +1,15 @@
 {
   "promptDelete": false,
   "alwaysUpdateLinks": true,
-  "foldIndent": true
+  "foldIndent": true,
+  "legacyEditor": false,
+  "readableLineLength": false,
+  "strictLineBreaks": false,
+  "showFrontmatter": true,
+  "showLineNumber": true,
+  "rightToLeft": false,
+  "foldHeading": true,
+  "lineWrap": true,
+  "smartIndentList": true,
+  "useTab": true
 }
