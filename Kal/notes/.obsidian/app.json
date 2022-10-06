@@ -1,0 +1,14 @@
+{
+  "livePreview": false,
+  "showFrontmatter": true,
+  "strictLineBreaks": false,
+  "promptDelete": false,
+  "spellcheck": true,
+  "readableLineLength": false,
+  "pdfExportSettings": {
+    "pageSize": "Legal",
+    "landscape": false,
+    "margin": "2",
+    "downscalePercent": 100
+  }
+}
