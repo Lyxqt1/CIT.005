@@ -8,17 +8,24 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "#act",
+      "query": "path:ACADS",
       "color": {
         "a": 1,
-        "rgb": 15503073
+        "rgb": 5412832
       }
     },
     {
-      "query": "#main",
+      "query": "path:orgs",
       "color": {
         "a": 1,
-        "rgb": 14725458
+        "rgb": 16753485
+      }
+    },
+    {
+      "query": "file:Ebriting kanban",
+      "color": {
+        "a": 1,
+        "rgb": 12607999
       }
     }
   ],
@@ -32,6 +39,6 @@
   "repelStrength": 14.3529411764706,
   "linkStrength": 1,
   "linkDistance": 124,
-  "scale": 0.7514342322277598,
-  "close": false
+  "scale": 0.5359795996225949,
+  "close": true
 }

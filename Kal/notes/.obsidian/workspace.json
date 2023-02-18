@@ -1,0 +1,168 @@
+{
+  "main": {
+    "id": "afe7bbbf872b6737",
+    "type": "split",
+    "children": [
+      {
+        "id": "e6b2047cd3d88d3c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cff2cc0b1a52eb3e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "sched.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "052d3c29169bd0fc",
+    "type": "split",
+    "children": [
+      {
+        "id": "d1c6cae7e03c7f0c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "91381c14962e5ddc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4d550ca49c1f076b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "58d3a2a22f209316",
+    "type": "split",
+    "children": [
+      {
+        "id": "5bc3d5111c0cdfb6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9df212850ecaefa6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "9f2d265c866ef170",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "5d64bd21e374072f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "sched.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "135ca27feb838db6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "sched.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "53cc3bf685dcf9b6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "sched.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "zk-prefixer:Create new unique note": false,
+      "workspaces:Manage workspace layouts": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "templater-obsidian:Templater": false,
+      "periodic-notes:Open this week": false
+    }
+  },
+  "active": "cff2cc0b1a52eb3e",
+  "lastOpenFiles": [
+    "weekly/2023-W07.md",
+    "Ebriting kanban.md",
+    "sched.md",
+    "J.md",
+    "JS array cheatsheet.md",
+    "Untitled.md",
+    "task.md",
+    "weekly/2023-W06.md",
+    "Pasted image 20230108234730.png",
+    "ATM.md"
+  ]
+}

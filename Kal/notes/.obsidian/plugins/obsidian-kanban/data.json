@@ -1,0 +1,7 @@
+{
+  "new-card-insertion-method": "append",
+  "hide-card-count": false,
+  "lane-width": 200,
+  "show-checkboxes": true,
+  "tag-colors": []
+}

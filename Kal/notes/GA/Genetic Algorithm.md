@@ -1,0 +1,16 @@
+- data sample - simulated real world scenario
+- Friday - half day
+- 21 units optimal - 3 units per subject - 3 unit per club*
+- Teachers can have reserved units 
+- Advisers - 3 units 
+- preferred subjects
+- preferred grade levels
+- preferred time
+- preferred sections
+- exclusive grade levels
+- exclusive subjects
+- exclusive sections
+- Homeroom should be in the first period
+- grade 1 to 3 has different subjects count with grade 4 to 6
+- M-T-W-Th  +  F    
+- M-W  +  T-Th  +  F 

@@ -15,9 +15,13 @@
 	7. 
 6. Akwe
 	1. failed to reserve mpcc2 - Erica covered it up and was able to use mpcc2 during friday(prep) and saturday
+	2. He left early during the preparations. meanwhile everyone else went home really late
+	3. 
 
 not his responsibility as a governor to reserve venues and make job orders yet he volunteered in doing so yet most of them are not properly reserved.
+
 He failed to comply to the system and thus delegation of task are all over the place.
 The gov is not left out; He has the position to keep up with the other execs
 
 posted on his my day  confidential committee documents
+
