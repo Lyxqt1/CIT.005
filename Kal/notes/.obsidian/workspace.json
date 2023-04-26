@@ -4,22 +4,45 @@
     "type": "split",
     "children": [
       {
-        "id": "e6b2047cd3d88d3c",
+        "id": "e151384bd7970fce",
         "type": "tabs",
         "children": [
           {
-            "id": "cff2cc0b1a52eb3e",
+            "id": "a46626997ef003cc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "sched.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "7664ec8a5e3c86da",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "claimed.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "54b1f5c979f1cf2a",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.1.16"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -96,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "sched.md",
+                "file": "claimed.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "sched.md",
+                "file": "claimed.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sched.md"
+                "file": "claimed.md"
               }
             }
           }
@@ -134,7 +157,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 302.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -149,20 +172,45 @@
       "obsidian-excalidraw-plugin:Create new drawing": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "templater-obsidian:Templater": false,
-      "periodic-notes:Open this week": false
+      "periodic-notes:Open today": false
     }
   },
-  "active": "cff2cc0b1a52eb3e",
+  "active": "7664ec8a5e3c86da",
   "lastOpenFiles": [
-    "weekly/2023-W07.md",
-    "Ebriting kanban.md",
     "sched.md",
-    "J.md",
-    "JS array cheatsheet.md",
+    "claimed.md",
+    "weekly/2023-W13.md",
+    "weekly/2023-W12.md",
+    "weekly/2023-W11.md",
     "Untitled.md",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "JS array cheatsheet.md",
+    "orgs/AICG posting.md",
+    "orgs/AICG list.md",
+    "orgs/aicg calendar.md",
+    "Pasted image 20230203214605.png",
+    "Pasted image 20230207005312.png",
+    "Pasted image 20230207083127.png",
+    "Pasted image 20230209151716.png",
+    "Pasted image 20230213110220.png",
+    "Pasted image 20230301001604.png",
+    "Pasted image 20230311234559.png",
     "task.md",
+    "orgs/ORGS.md",
+    "orgs/minutes.md",
+    "orgs/guide.md",
+    "orgs/complaint.md",
+    "weekly/2023-W09.md",
+    "Untitled 1.md",
+    "2023-02-28.md",
+    "weekly/2023-W08.md",
+    "weekly/2023-W07.md",
+    "orgs/selling AICG.md",
+    "orgs/Pasted image 20220628145118.png.md",
+    "orgs/SITAO Inventory.md",
+    "orgs/File for Impeachment.md",
     "weekly/2023-W06.md",
-    "Pasted image 20230108234730.png",
-    "ATM.md"
+    "Ebriting kanban.md"
   ]
 }

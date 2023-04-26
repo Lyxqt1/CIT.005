@@ -1,11 +1,55 @@
-Happy New Year Fragile Noodle Hands EdgeLord Racoon!
+110 10
+8
+15
+26
+30
+41
+96
+85
+81
+70
 
-it's was the best-worst half year i guess. We had a quiet few arguments here and there. Despite all of that, you are still one of the best-worst friend. You are bad because you still have cracks on your head, but you will fix them in no time. Although you have been through and be worst, you still manage to get up. I wish that through-out the years you will be at your best.
+8
+21
+65
+76
+101
+200
+156
+145
+120
 
-during april-may or something you were having a difficult time. I wish i could be there, but I am can not. you let it out in RMI. I did not know what exactly to do, I asked some people whom I trusted that time. 
+100 90
+4
+11
+15
+86
+90
 
-The resignation was the best thing you did. 
+100 10
+4
+10
+35
+66
+91
 
-0.01923076923
+100 100
+4
+1
+25
+76
+100
+
+x = x^2 + a mod n
+x^2 - x + a mod n= 0
+x^2 - x + a  = kn
 
 
+..1, -3, 0, 1, 1
+
+1
+5 4
+2 1
+2 4
+4 5
+1 5

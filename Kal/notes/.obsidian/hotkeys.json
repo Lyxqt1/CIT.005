@@ -1,13 +1,5 @@
 {
-  "obsidian-kanban:create-new-kanban-board": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": ","
-    }
-  ],
+  "obsidian-kanban:create-new-kanban-board": [],
   "obsidian-kanban:convert-to-kanban": [
     {
       "modifiers": [
