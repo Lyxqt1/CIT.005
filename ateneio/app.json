@@ -4,13 +4,12 @@
     "slug": "ateneio",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/logo.png",
+    "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#282c34"
     },
+    "backgroundColor": "#282c34",
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -19,12 +18,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "foregroundImage": "./assets/logo.png",
+        "backgroundColor": "#282c34"
+      },
+      "package": "com.kalz16.ateneio"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logo.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "430c16b1-e97c-4541-a5c3-5b68b4ca6f03"
+      }
     }
   }
 }
