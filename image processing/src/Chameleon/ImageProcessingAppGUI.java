@@ -14,8 +14,8 @@ public class ImageProcessingAppGUI extends JFrame {
     private JLabel imageLabel;
     private JLabel imageOut;
     private String currentImagePath;
-    private int maxImageWidth = 600;
-    private int maxImageHeight = 600;
+    private int maxImageWidth = 800;
+    private int maxImageHeight = 800;
     private BufferedImage img;
     private static int width;
     private static int height;
@@ -48,6 +48,18 @@ public class ImageProcessingAppGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 showColorFilterOptions();
+            }
+        });
+        grayscaleButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showGrayscaleOptions();
+            }
+        });
+        negativeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showNegativeOptions();
             }
         });
 
@@ -92,6 +104,212 @@ public class ImageProcessingAppGUI extends JFrame {
         });
     }
 
+    private void showNegativeOptions() {
+        // Create a dialog for Fundamentals options
+        JDialog fundamentalsDialog = new JDialog(this, "Fundamentals Options", true);
+        fundamentalsDialog.setSize(200, 200);
+        fundamentalsDialog.setLocationRelativeTo(this);
+
+        // Create buttons for Fundamentals sub-options
+        JButton grayScaleButton = new JButton("GrayScale");
+        JButton colorButton = new JButton("Color");
+        JButton backButton = new JButton("Back");
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fundamentalsDialog.dispose();
+            }
+        });
+        // Add action listeners to the sub-option buttons
+
+        grayScaleButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BufferedImage grayscale_invert = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+
+                for (int i = 0; i < height; i++){
+                    for(int j = width - 1; j >= 0; j--){
+                        int current_Pixel = img.getRGB(j, i);
+                        int redChannel_of_lastPixel = 255 - Red_gs(current_Pixel);
+                        int greenChannel_of_lastPixel = 255 -Green_gs(current_Pixel);
+                        int blueChannel_of_lastPixel = 255 -Blue_gs(current_Pixel);
+                        int average = (redChannel_of_lastPixel + greenChannel_of_lastPixel + blueChannel_of_lastPixel)/3;
+
+                        grayscale_invert.setRGB(j, i, average << 16 | average << 8 | average);
+                    }
+                }
+                File invert_gray = new File("inverted_grayscale.jpg");
+
+                try {
+                    ImageIO.write(grayscale_invert, "jpg",invert_gray);
+                    System.out.println("saved");
+                    ImageIcon icon = new ImageIcon(grayscale_invert);
+                    imageOut.setIcon(icon);
+                    fundamentalsDialog.dispose();
+                } catch (IOException ex) {
+                    System.out.println("Error: " + ex);
+                }
+            }
+        });
+        colorButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BufferedImage color_invert = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+
+                for (int i = 0; i < height; i++){
+                    for(int j = width - 1; j >= 0; j--){
+                        int current_Pixel = img.getRGB(j, i);
+                        int redChannel_of_lastPixel = 255 - Red_gs(current_Pixel);
+                        int greenChannel_of_lastPixel = 255 - Green_gs(current_Pixel);
+                        int blueChannel_of_lastPixel = 255 - Blue_gs(current_Pixel);
+                        color_invert.setRGB(j, i, (redChannel_of_lastPixel << 16) | (greenChannel_of_lastPixel << 8) | blueChannel_of_lastPixel);
+                    }
+                }
+                File invert_color = new File("inverted_color.jpg");
+
+                try {
+                    ImageIO.write(color_invert, "jpg",invert_color);
+                    System.out.println("saved");
+                    ImageIcon icon = new ImageIcon(color_invert);
+                    imageOut.setIcon(icon);
+                    fundamentalsDialog.dispose();
+                } catch (IOException ex) {
+                    System.out.println("Error: " + ex);
+                }
+
+            }
+        });
+        // Create a panel for sub-option buttons
+        JPanel subOptionPanel = new JPanel(new GridLayout(3, 1));
+        subOptionPanel.add(grayScaleButton);
+        subOptionPanel.add(colorButton);
+        subOptionPanel.add(backButton);
+
+        // Add the sub-option panel to the dialog
+        fundamentalsDialog.add(subOptionPanel);
+
+        // Show the dialog
+        fundamentalsDialog.setVisible(true);
+    }
+    private void showGrayscaleOptions() {
+        // Create a dialog for Fundamentals options
+        JDialog fundamentalsDialog = new JDialog(this, "Fundamentals Options", true);
+        fundamentalsDialog.setSize(200, 200);
+        fundamentalsDialog.setLocationRelativeTo(this);
+
+        // Create buttons for Fundamentals sub-options
+        JButton averageButton = new JButton("Average");
+        JButton luminosityButton = new JButton("Luminosity");
+        JButton lightnessButton = new JButton("Lightness");
+        JButton backButton = new JButton("Back");
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fundamentalsDialog.dispose();
+            }
+        });
+        // Add action listeners to the sub-option buttons
+        averageButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BufferedImage ave_output = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+
+                for (int i = 0; i < height; i++) {
+                    for (int j = width - 1; j >= 0; j--) {
+                        int current_Pixel = img.getRGB(j, i);
+                        int redChannel_of_lastPixel = Red_gs(current_Pixel);
+                        int greenChannel_of_lastPixel = Green_gs(current_Pixel);
+                        int blueChannel_of_lastPixel = Blue_gs(current_Pixel);
+                        int average = (redChannel_of_lastPixel + greenChannel_of_lastPixel + blueChannel_of_lastPixel) / 3;
+                        ave_output.setRGB(j, i, average << 16 | average << 8 | average);
+                    }
+                }
+                File ave = new File("average.jpg");
+
+                try {
+                    ImageIO.write(ave_output, "jpg", ave);
+                    System.out.println("saved");
+                    ImageIcon icon = new ImageIcon(ave_output);
+                    imageOut.setIcon(icon);
+                    fundamentalsDialog.dispose();
+                } catch (IOException ex) {
+                    System.out.println("Error: " + ex);
+                }
+            }
+        });
+        luminosityButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BufferedImage lum_output = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+
+                for (int i = 0; i < height; i++) {
+                    for (int j = width - 1; j >= 0; j--) {
+                        int current_Pixel = img.getRGB(j, i);
+                        int redChannel_of_lastPixel = Red_gs(current_Pixel);
+                        int greenChannel_of_lastPixel = Green_gs(current_Pixel);
+                        int blueChannel_of_lastPixel = Blue_gs(current_Pixel);
+                        int luminosity = (int) (0.21 * redChannel_of_lastPixel + 0.72 * greenChannel_of_lastPixel + 0.07 * blueChannel_of_lastPixel);
+                        lum_output.setRGB(j, i, luminosity << 16 | luminosity << 8 | luminosity);
+                    }
+                }
+                File lum = new File("luminosity.jpg");
+
+                try {
+                    ImageIO.write(lum_output, "jpg", lum);
+                    System.out.println("saved");
+                    ImageIcon icon = new ImageIcon(lum_output);
+                    imageOut.setIcon(icon);
+                    fundamentalsDialog.dispose();
+                } catch (IOException ex) {
+                    System.out.println("Error: " + ex);
+                }
+            }
+        });
+        lightnessButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BufferedImage light_output = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+
+                for (int i = 0; i < height; i++) {
+                    for (int j = width - 1; j >= 0; j--) {
+                        int current_Pixel = img.getRGB(j, i);
+                        int redChannel_of_lastPixel = Red_gs(current_Pixel);
+                        int greenChannel_of_lastPixel = Green_gs(current_Pixel);
+                        int blueChannel_of_lastPixel = Blue_gs(current_Pixel);
+                        int lightness = (int) ((Math.max(Math.max(redChannel_of_lastPixel, greenChannel_of_lastPixel), blueChannel_of_lastPixel)) + (Math.min(Math.min(redChannel_of_lastPixel, greenChannel_of_lastPixel), blueChannel_of_lastPixel))) / 2;
+                        light_output.setRGB(j, i, lightness << 16 | lightness << 8 | lightness);
+                    }
+                }
+                File light = new File("lightness.jpg");
+
+                try {
+                    ImageIO.write(light_output, "jpg", light);
+                    System.out.println("saved");
+                    ImageIcon icon = new ImageIcon(light_output);
+                    imageOut.setIcon(icon);
+                    fundamentalsDialog.dispose();
+                } catch (IOException ex) {
+                    System.out.println("Error: " + ex);
+                }
+            }
+        });
+        // ... Implement action listeners for other sub-options ...
+
+        // Create a panel for sub-option buttons
+        JPanel subOptionPanel = new JPanel(new GridLayout(4, 1));
+        subOptionPanel.add(averageButton);
+        subOptionPanel.add(luminosityButton);
+        subOptionPanel.add(lightnessButton);
+        subOptionPanel.add(backButton);
+
+        // Add the sub-option panel to the dialog
+        fundamentalsDialog.add(subOptionPanel);
+
+        // Show the dialog
+        fundamentalsDialog.setVisible(true);
+    }
     private void showColorFilterOptions() {
         // Create a dialog for Fundamentals options
         JDialog fundamentalsDialog = new JDialog(this, "Fundamentals Options", true);
@@ -476,16 +694,17 @@ public class ImageProcessingAppGUI extends JFrame {
     private static int getGreen(int pixel) {
         return (pixel & (255 << 8));
     }
+
     private static int Blue_gs(int pixel) {
         return (pixel & 255);
     }
 
     private static int Green_gs(int pixel) {
-        return (pixel& (255 << 8)) >> 8;
+        return (pixel & (255 << 8)) >> 8;
     }
 
     private static int Red_gs(int pixel) {
-        return (pixel &(255 << 16)) >> 16;
+        return (pixel & (255 << 16)) >> 16;
     }
 
     public static void main(String[] args) {
