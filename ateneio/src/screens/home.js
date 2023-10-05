@@ -3,8 +3,6 @@ import React from "react";
 import {DarkTheme} from "@react-navigation/native";
 
 function HomeScreen(props) {
-    console.log(props.styles)
-    console.log(props.testing)
     return (
             <View theme={DarkTheme}>
                 <Pressable
